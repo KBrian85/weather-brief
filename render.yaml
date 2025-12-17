@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: weather-brief-web
+    runtime: go
+    buildCommand: go build -o app ./cmd/web
+    startCommand: ./app
+    envVars:
+      - key: BRIEF_USE_MOCK
+        value: "0"
