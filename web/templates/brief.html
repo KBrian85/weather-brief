@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Weather Brief</title>
+  </head>
+  <body>
+    <h1>Daily Weather Brief</h1>
+
+    <p><strong>{{.Location}}</strong></p>
+
+    <h2>Today ({{.Today.Date}})</h2>
+    <p>{{.TodayText}}</p>
+    <ul>
+      <li>High: {{printf "%.1f" .Today.TempMax}}°C</li>
+      <li>Low: {{printf "%.1f" .Today.TempMin}}°C</li>
+      <li>Precipitation: {{printf "%.1f" .Today.PrecipMM}} mm</li>
+    </ul>
+
+    <p><a href="/">Search again</a></p>
+  </body>
+</html>
