@@ -3,14 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <title>Weather Brief</title>
+    <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body>
-    <h1>Daily Weather Brief</h1>
+    <main class="container">
+      <section class="card">
+        <h1>Daily Weather Brief</h1>
 
-    <form method="POST" action="/brief">
-      <label>City</label>
-      <input name="city" placeholder="e.g., Nairobi" required />
-      <button type="submit">Get brief</button>
-    </form>
+        <form method="POST" action="/brief" class="form">
+          <label>City</label>
+          <input name="city" placeholder="e.g., Nairobi" required />
+          <button type="submit">Get brief</button>
+        </form>
+      </section>
+    </main>
   </body>
 </html>

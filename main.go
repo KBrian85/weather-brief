@@ -25,6 +25,10 @@ func main() {
 
 	mux := http.NewServeMux()
 
+	// ✅ ADD THIS BLOCK (serves web/static at /static/)
+	fs := http.FileServer(http.Dir(filepath.Join("web", "static")))
+	mux.Handle("/static/", http.StripPrefix("/static/", fs))
+
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodGet {
 			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
